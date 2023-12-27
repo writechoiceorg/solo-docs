@@ -1,0 +1,161 @@
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  .accordion_container {
+    border-radius: 6px;
+    border: 1px solid var(--border-foundations-subtle, #E7EAEE);
+    display: flex;
+    transition: all .2s;
+  }
+
+  .accordion_container:hover {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .accordion_container .control-icon {
+    fill: #A6AEBB;
+    transition: .3s ease;
+    pointer-events: none;
+  }
+
+  .accordion_container .control-icon-close {
+    display: none;
+  }
+
+  .accordion_call {
+    font-weight: 500;
+  }
+
+  details[open] .control-icon-close {
+    display: initial;
+    transition: .3s ease;
+  }
+
+  details[open] .control-icon-expand {
+    display: none;
+  }
+
+  details[open] summary {
+    border: 1px solid #614ad623;
+    border-bottom: 0;
+    border-end-end-radius: 0;
+    margin-bottom: 1rem;
+  }
+
+
+  .accordion_container summary {
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .accordion_container summary .accordion_call {
+    display: block;
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .accordion_container summary .sumary_icon {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  .accordion_container .accordion_content {
+    display: flex;
+    padding: 0rem 1rem 1rem 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: stretch;
+  }
+
+  .accordion_container .accordion_content table {
+    margin: 0 !important;
+  }
+
+  .accordion_container .accordion_content th {
+    text-align: left;
+  }
+
+  @media only screen and (max-width: 700px) {
+    .accordion_container .accordion_content table {
+      display: block !important;
+      overflow-x: auto !important;
+    }
+  }
+
+  details[open] div {
+    animation: sweep .3s ease-in-out;
+  }
+
+  @keyframes sweep {
+    0% {
+      opacity: 0;
+      margin-left: -10px
+    }
+
+    100% {
+      opacity: 1;
+      margin-left: 0px
+    }
+  }
+</style>
+
+<body>
+  <details class="accordion_container">
+    <summary>
+      <span class="accordion_call">Financial Reports</span>
+      <div class="sumary_icon">
+        <svg class="control-icon control-icon-expand" width="20" height="20" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+        </svg>
+        <svg class="control-icon control-icon-close" width="20" height="20" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z" />
+        </svg>
+      </div>
+    </summary>
+    <div class="accordion_content">
+
+      <table>
+        <thead>
+          <tr>
+            <th>Option</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Edit General Ledger for Businesses</strong></td>
+            <td>Enable the business owner to edit their general ledger.</td>
+          </tr>
+          <tr>
+            <td><strong>Directory</strong></td>
+            <td>A contact list for the business financial network.</td>
+          </tr>
+          <tr>
+            <td><strong>CPA Support</strong></td>
+            <td>Opt-in for SOLO’s team of expert CPAs to help you get the best out of the platform.</td>
+          </tr>
+          <tr>
+            <td><strong>Data Sync</strong></td>
+            <td>Select the desired number of years to sync data. The higher the years to sync, the longer it will take to sync data.</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </details>
+</body>
