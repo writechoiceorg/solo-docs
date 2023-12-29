@@ -20,3 +20,7 @@ jobs:
         uses: readmeio/rdme@v8
         with:
           rdme: docs ./documentation --key=${{ secrets.README_API_KEY }} --version=1.0
+
+      - name: Set merge status on failure
+        if: failure()
+        run: echo "::error::Vale check failed. Please fix the issues before merging." && exit 1
