@@ -2,9 +2,8 @@ name: sync-docs
 
 # Run workflow for every push to the `main` branch
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    types: [opened, reopened, synchronize]
 
 jobs:
   sync:
@@ -24,3 +23,4 @@ jobs:
       - name: Set merge status on failure
         if: failure()
         run: echo "::error::Vale check failed. Please fix the issues before merging." && exit 1
+
