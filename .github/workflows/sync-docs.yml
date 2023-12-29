@@ -2,8 +2,9 @@ name: Sync `documentation` directory to ReadMe
 
 # Run workflow for every push to the `main` branch
 on:
-  pull_request:
-    types: [opened, reopened, synchronize]
+  push:
+    branches:
+      - main
 
 jobs:
   sync:
