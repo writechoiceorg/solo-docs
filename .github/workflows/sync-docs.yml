@@ -24,3 +24,4 @@ jobs:
       - name: Set merge status on failure
         if: failure()
         run: echo "::error::Vale check failed. Please fix the issues before merging." && exit 1
+        
